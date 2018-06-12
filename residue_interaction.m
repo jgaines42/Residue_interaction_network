@@ -98,7 +98,7 @@ end
 
 %Isolate dipeptide
 orig = [];
-[allDipeptide1,next_pro] = isolate_dipeptide(tempModel2, res_ids, resiId1);
+[allDipeptide1,next_pro] = isolate_dipeptide(tempModel2, res_ids, resiId1, resiName1);
 if DOF >0 && (size(allDipeptide1,1) == numAtom || (size(allDipeptide1,1) == numAtom-1 && next_pro ==1))
     if next_pro == 0
         [new_Dipeptide, correct_now, ind] = check_Dipeptide_order(allDipeptide1(4:size(allDipeptide1,1)-3,:), resiName1);
@@ -187,7 +187,7 @@ if DOF >0 && (size(allDipeptide1,1) == numAtom || (size(allDipeptide1,1) == numA
         
         %Isolate dipeptide
         orig = [];
-        [allDipeptide2,next_pro] = isolate_dipeptide(tempModel2, res_ids, resiId2);
+        [allDipeptide2,next_pro] = isolate_dipeptide(tempModel2, res_ids, resiId2, resiName2);
         if DOF >0 && (size(allDipeptide2,1) == numAtom || (size(allDipeptide2,1) == numAtom-1 && next_pro ==1))
             
             if next_pro == 0

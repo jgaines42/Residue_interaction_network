@@ -87,20 +87,6 @@ cdata(~ind0) = 5;
 g = graph(paired);
 
 bins = conncomp(g);
-%{
-for b = 1:max(bins)
-    this_b = these_res(bins==b,:);
-    ind0  = ismember(this_b(:,2), {'ILE','LEU','PHE','VAL','MET','TRP','TYR', 'SER', 'THR'});
-    if sum(ind0) == size(this_b,1)
-        all_groups = [all_groups;pdb_name, {size(this_b,1)}, {0}, {b}];
-    else
-        all_groups = [all_groups;pdb_name, {size(this_b,1)}, {1}, {b}];
-    end
-end
-%}
-%ind0 = ismember(all_locations(:,1), pdb_name);
-%all_locations(ind0,4) = num2cell(bins)';
-% ind0 = ismember(these_res(:,2), {'ILE','LEU','PHE','VAL','MET', 'TRP', 'HIS', 'SER', 'THR'});
 new_moving = [cell2mat(these_res(:,6)),bins'];
 save(strcat(save_folder, pdb, '_all_core_binned_2.mat'), 'new_moving');
 
