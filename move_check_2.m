@@ -259,12 +259,10 @@ else
                 if DOF2 >1
                     setChi2 = D2(loop_2,2);
                     subtract_array_2_2 = repmat(Position_2(iChi2Array2(2),:),numAtom2,1);
-                    delta_term_2_2 =  pi*sign(InitChi2_2)*InitChi2_2/180;
                     Position_2 = Rotate_DA(Position_2, setChi2, subtract_array_2_2, delta_term_2_2, iChi2Array2, moveAtomID_2);
                     if DOF2 > 2
                         setChi3 = D2(loop_2,3);
                         subtract_array_3_2 = repmat(Position_2(iChi3Array2(2),:),numAtom2,1);
-                        delta_term_3_2 =  pi*sign(InitChi3_2)*InitChi3_2/180;
                         Position_2 = Rotate_DA(Position_2, setChi3, subtract_array_3_2, delta_term_3_2, iChi3Array2, moveAtomID3_2);
                     end
                 end
